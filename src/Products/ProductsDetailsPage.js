@@ -15,14 +15,7 @@ const ProductDetailsPage = () => {
         const sameItemIndex = ctx.cart.findIndex(item => item.title === product.title)
         const sameItem = ctx.cart[sameItemIndex]
         if (sameItem) {
-            const productObj = {
-                title: product.title,
-                price: product.price,
-                imageUrl: product.imageUrl,
-                amount: (sameItem.amount + 1)
-            }
             try {
-                const response = await axios.put(`https://react-http-d19fd-default-rtdb.firebaseio.com///${ctx.email}/${sameItem.id}.json`, productObj)
                 ctx.onShowCart()
                 setIsAdded(true)
             } catch (error) {

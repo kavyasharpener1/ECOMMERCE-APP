@@ -28,7 +28,6 @@ const EcontextProvider = (props) => {
         setCart(updatedCart);
         setTotalAmount(preAmount => preAmount - product.price * product.amount)
         try {
-            const response = await axios.delete(`https://react-http-d19fd-default-rtdb.firebaseio.com//${email}/${id}.json`)
         } catch (error) {
             alert(error.message)
         }

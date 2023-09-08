@@ -24,15 +24,8 @@ const CartItem = props => {
     }
 
     const onRemoveHandler = async () => {
-        const productObj = {
-            title: props.title,
-            price: Number(props.price),
-            imageUrl: props.imageUrl,
-            amount: Number(props.amount - 1)
-        }
 
         try {
-            const response = await axios.put(`https://react-http-d19fd-default-rtdb.firebaseio.com///${ctx.email}/${props.id}.json`, productObj)
             ctx.onShowCart()
         } catch (error) {
             alert(error.response.data.error.message)

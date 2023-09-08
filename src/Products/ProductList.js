@@ -28,15 +28,8 @@ const ProductList = (props) => {
                 setIsAdded(false)
             }
         } else {
-            const productObj = {
-                title: props.title,
-                price: props.price,
-                imageUrl: props.imageUrl,
-                amount: 1
-            }
 
             try {
-                const response = await axios.post(`https://react-http-d19fd-default-rtdb.firebaseio.com///${ctx.email}.json`, productObj)
                 ctx.onShowCart()
                 setIsAdded(true)
 
